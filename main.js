@@ -63,7 +63,7 @@ function generateResponse() {
     else if (b > c) {
         console.log("testues")
 
-        return -1
+        return 2
     }
     else {
         console.log("what ll")
