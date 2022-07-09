@@ -57,16 +57,19 @@ function generateResponse() {
         return Math.floor(Math.random()*3)
     }
     else if (a > b && a > c) {
-        return 2
-    }
-    else if (b > c) {
-        return 0
-    }
-    else {
+        console.log("test")
         return 1
     }
-}
-document.getElementById('rock').onclick = ()=>play(0, generateResponse())
-document.getElementById('paper').onclick = ()=>play(1, generateResponse())
-document.getElementById('scissors').onclick = ()=>play(2, generateResponse())
+    else if (b > c) {
+        console.log("testues")
 
+        return -1
+    }
+    else {
+        console.log("what ll")
+        return 0
+    }
+}
+document.getElementById('rock').onclick = ()=>    play(0, generateResponse())
+document.getElementById('paper').onclick = ()=>   play(1, generateResponse())
+document.getElementById('scissors').onclick = ()=>play(2, generateResponse())
