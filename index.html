@@ -7,7 +7,12 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="app">
+    <div class="side">AI SECTION: <br>
+        <button onclick="response = originalResponse">Original System</button>
+        <button onclick="response = regressiveSearch">New System</button>
+
+    </div>
+    <div class="main">
         <div class="buttons-container">
             <button id="rock">Rock</button>
             <button id="paper">Paper</button>
@@ -21,6 +26,7 @@
             <p id="ties"></p>
         </div>
     </div>
+    <script src="tree.js"></script>
     <script src="main.js"></script>
 </body>
 </html>
