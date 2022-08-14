@@ -7,23 +7,31 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="side">AI SECTION: <br>
-        <button onclick="response = originalResponse">3-Base Count</button>
-        <button onclick="response = regressiveSearch">New System</button>
-
-    </div>
+   
     <div class="main">
         <div class="buttons-container">
-            <button id="rock">Rock</button>
-            <button id="paper">Paper</button>
-            <button id="scissors">Scissors</button>
+            <button class="rps" id="rock"></button>
+            <button class="rps" id="paper"></button>
+            <button class="rps" id="scissors"></button>
         </div>
         <div id="response"></div>
         <div class="statistics">
-            <p id="winrate"></p>
-            <p id="wins"></p>
-            <p id="loss"></p>
-            <p id="ties"></p>
+            <p id="winrate">N/A</p>
+
+            <table>
+                <tr>
+                    <th class="right">Wins:</th>
+                    <th id="wins">0</th>
+                </tr>
+                <tr>
+                    <th class="right">Losses:</th>
+                    <th id="losses">0</th>
+                </tr>
+                <tr>
+                    <th class="right">Ties:</th>
+                    <th id="ties">0</th>
+                </tr>
+            </table>
         </div>
     </div>
     <script src="tree.js"></script>
