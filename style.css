@@ -61,7 +61,6 @@ button:hover, button:active {
 }
 .statistics {
     margin-top: 20px;
-    border: 3px solid black;
     width: 100%;
     height: 50px;
     height: max-content;
@@ -72,7 +71,7 @@ button:hover, button:active {
     text-align: center;
 }
 table {
-    width: 200px;
+    width: 100vmin;
     font-size: 30px;
 }
 th {
