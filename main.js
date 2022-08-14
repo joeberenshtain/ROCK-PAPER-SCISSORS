@@ -1,13 +1,9 @@
 var WINS = 0
 var LOSSES = 0
 var TIES = 0
-var prevMoves = []
-prevMoves.length = 27
-prevMoves.fill(0, 0, 27)
 // Fills with all possible variations of RPS RSP PSR etc
-var move = 0
-var moves = [Math.floor(Math.random() * 3), Math.floor(Math.random() * 3), Math.floor(Math.random() * 3)]
-var allMoves = [];
+const TREE = new BinarySearchTree()
+
 var response = regressiveSearch;
 
 function mod(n, m)
@@ -17,21 +13,25 @@ function mod(n, m)
 
 function play(you, bot)
 {
-    document.getElementById('response').textContent = bot == 0 ? "Rock" : bot == 1 ? "Paper" : "Scissors"
+
     if (mod(you + 1, 3) == bot)
     {
+        document.getElementById('response').textContent = "You Lose!"
+        document.getElementById('response').style.color = "red"
         LOSSES++
     }
     else if (mod(you - 1, 3) == bot)
     {
+        document.getElementById('response').textContent = "You Win!"
+        document.getElementById('response').style.color = "green"
         WINS++
     }
     else
     {
+        document.getElementById('response').textContent = "You Tie!"
+        document.getElementById('response').style.color = "grey"
         TIES++
     }
-    move++
-    moves = [moves[1], moves[2], you]
     allMoves.push(you)
     updateResponse()
     updateStatistics()
@@ -40,42 +40,10 @@ function play(you, bot)
 function updateStatistics()
 {
     document.getElementById('winrate').textContent = Math.floor(WINS * 100 / (WINS + LOSSES)) + "%"
-    document.getElementById('wins').textContent = "Wins: " + WINS
-    document.getElementById('loss').textContent = "Losses: " + LOSSES
-    document.getElementById('ties').textContent = "Ties: " + TIES
+    document.getElementById('wins').textContent = WINS
+    document.getElementById('losses').textContent = LOSSES
+    document.getElementById('ties').textContent =   TIES
 }
-// 000 001 011 111 002 012 112 020
-// 000 001 00
-function updateResponse()
-{
-    let n = moves[0] * 9 + moves[1] * 3 + moves[2]
-    prevMoves[n]++
-}
-
-function originalResponse()
-{
-    let a = prevMoves[moves[1] * 9 + moves[2] * 3]
-    let b = prevMoves[moves[1] * 9 + moves[2] * 3 + 1]
-    let c = prevMoves[moves[1] * 9 + moves[2] * 3 + 2]
-    if (a == b && a == c)
-    {
-        console.log("Random Response Fallback")
-        return Math.floor(Math.random() * 3)
-    }
-    else if (a > b && a > c)
-    {
-        return 1
-    }
-    else if (b > c)
-    {
-        return 2
-    }
-    else
-    {
-        return 0
-    }
-}
-const TREE = new BinarySearchTree()
 
 function regressiveSearch()
 {
