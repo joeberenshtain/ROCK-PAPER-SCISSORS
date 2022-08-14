@@ -4,6 +4,7 @@
 
     touch-action: manipulation;
     text-align: left;
+    overflow: hidden;
 }
 .buttons-container {
     text-align: center;
