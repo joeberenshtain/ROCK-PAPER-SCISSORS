@@ -2,7 +2,7 @@ var WINS = 0
 var LOSSES = 0
 var TIES = 0
 const TREE = new BinarySearchTree()
-
+var allMoves = [];
 var response = regressiveSearch;
 
 function mod(n, m)
