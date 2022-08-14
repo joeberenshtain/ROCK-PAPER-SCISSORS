@@ -32,7 +32,6 @@ function play(you, bot)
         TIES++
     }
     allMoves.push(you)
-    updateResponse()
     updateStatistics()
 }
 
