@@ -2,12 +2,23 @@
     box-sizing: border-box;
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 
+    touch-action: manipulation;
+    text-align: left;
 }
-button {
-    border: 3px solid black;
-    border-radius: 2px;
+.buttons-container {
+    text-align: center;
+    width: 100%;
+}
+.rps {
+    display: inline-block;
+    background-size: 100%;
 
-    margin: 8px;
+    border: 3px solid black;
+    border-radius: 50%;
+    aspect-ratio: 1;
+    width: 30%;
+    
+    margin: 1%;
 
     min-width: 150px;
     
@@ -17,14 +28,23 @@ button {
     font-size: 30px;
         
 }
-button:hover {
-    background-color: rgb(252, 227, 90);
-    box-shadow: 3px 3px;
+#rock {
+    background-image:url('Rock.png');
+}
+#paper {
+    background-image:url('Paper.png');
+}
+#scissors {
+    background-image:url('Scissors.png');
+}
+button:hover, button:active {
+    border: 5px solid black;
 }
 
+
 .main {
-    width: 550px;
     position: absolute;
+    width: 100vmin;
 
     left: 50%;
     top: 50%;
@@ -33,26 +53,11 @@ button:hover {
     height: 95%;
 
     padding: 10px;
-    border: 3px solid black;
 }
-.side {
-    width: 350px;
-    position: absolute;
 
-    top: 50%;
-    transform: translateY(-50%);
-
-    height: 95%;
-
-    padding: 10px;
-    border: 3px solid black;
-}
-.buttons-container {
-    border: 3px solid black;
-
-
-
-    
+#response {
+    text-align: center;
+    font-size: 30px;
 }
 .statistics {
     margin-top: 20px;
@@ -60,4 +65,20 @@ button:hover {
     width: 100%;
     height: 50px;
     height: max-content;
+    font-size: 30px;
+    font-family: sans-serif;
+}
+#winrate {
+    text-align: center;
+}
+table {
+    width: 200px;
+    font-size: 30px;
+}
+th {
+    width: 50%;
+}
+.right {
+    text-align: right;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
