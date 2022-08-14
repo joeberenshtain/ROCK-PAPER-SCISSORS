@@ -1,7 +1,6 @@
 var WINS = 0
 var LOSSES = 0
 var TIES = 0
-// Fills with all possible variations of RPS RSP PSR etc
 const TREE = new BinarySearchTree()
 
 var response = regressiveSearch;
